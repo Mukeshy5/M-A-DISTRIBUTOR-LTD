@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import CategoryCard from '../components/CategoryCard.jsx';
 import ProductCard from '../components/ProductCard.jsx';
@@ -7,7 +8,6 @@ import products, { categories } from '../data/products.js';
 const categoryMedia = {
   'Clothing': 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80',
   'Kitchen Replenishment': 'https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=900&q=80',
-  'Groceries': 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80',
   'Decorative Items': 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80',
 };
 
@@ -39,21 +39,39 @@ const categoryItems = [
     category: 'Kitchen Replenishment',
   },
   {
-    title: 'Groceries',
-    description: 'Everyday grocery and essential consumer products supplied through our distribution network.',
-    image: products.find((product) => product.category === 'Groceries')?.image,
-    category: 'Groceries',
-  },
-  {
     title: 'Decorative Items',
     description: 'Decorative products designed to add style and visual appeal to homes and spaces.',
     image: products.find((product) => product.category === 'Decorative Items')?.image,
     category: 'Decorative Items',
   },
+  {
+    title: 'All Products',
+    description: 'Browse our complete catalogue of products across all available categories.',
+    image: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=900&q=80',
+    category: 'All',
+  },
 ];
 
 const Home = () => {
   const featuredProducts = products.filter((product) => product.featured).slice(0, 3);
+  const [heroImages, setHeroImages] = useState([]);
+
+  useEffect(() => {
+    const imagePool = products.map(p => ({ image: p.image, alt: p.name }));
+    // Set initial images
+    setHeroImages([
+      imagePool[0 % imagePool.length],
+      imagePool[1 % imagePool.length],
+      imagePool[2 % imagePool.length],
+    ]);
+
+    const interval = setInterval(() => {
+      const shuffled = [...imagePool].sort(() => 0.5 - Math.random());
+      setHeroImages(shuffled.slice(0, 3));
+    }, 5000); // Change images every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -64,7 +82,7 @@ const Home = () => {
             <h1>Reliable Distribution Across Everyday Product Categories</h1>
             <p>
               M&amp;A DISTRIBUTOR LTD supplies a diverse range of products across clothing,
-              kitchen replenishment, groceries and decorative items.
+              kitchen replenishment and decorative items.
             </p>
             <div className="hero-actions">
               <Link to="/products" className="primary-button">
@@ -78,13 +96,13 @@ const Home = () => {
 
           <div className="hero-visual" aria-label="Business distribution operations overview">
             <div className="visual-card large">
-              <img src={products.find((product) => product.category === 'Kitchen Replenishment')?.image} alt="Kitchen distribution products" />
+              {heroImages[0] && <img src={heroImages[0].image} alt={heroImages[0].alt} />}
             </div>
             <div className="visual-card small">
-              <img src={products.find((product) => product.category === 'Decorative Items')?.image} alt="Decorative product display" />
+              {heroImages[1] && <img src={heroImages[1].image} alt={heroImages[1].alt} />}
             </div>
             <div className="visual-card small alt">
-              <img src={products.find((product) => product.category === 'Clothing')?.image} alt="Clothing distribution range" />
+              {heroImages[2] && <img src={heroImages[2].image} alt={heroImages[2].alt} />}
             </div>
           </div>
         </div>

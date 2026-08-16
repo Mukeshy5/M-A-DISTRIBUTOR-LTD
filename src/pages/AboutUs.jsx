@@ -12,7 +12,6 @@ const details = [
 const categories = [
   'Clothing',
   'Kitchen Replenishment',
-  'Groceries',
   'Decorative Items',
 ];
 
@@ -62,7 +61,6 @@ const AboutUs = () => {
                 <p>
                   {category === 'Clothing' && 'Clothing and apparel-related products.'}
                   {category === 'Kitchen Replenishment' && 'Kitchen and household replenishment products.'}
-                  {category === 'Groceries' && 'Everyday grocery and essential products.'}
                   {category === 'Decorative Items' && 'Decorative and home-related products.'}
                 </p>
               </div>

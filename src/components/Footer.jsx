@@ -27,7 +27,6 @@ const Footer = () => {
           <ul className="footer-links">
             <li>Clothing</li>
             <li>Kitchen Replenishment</li>
-            <li>Groceries</li>
             <li>Decorative Items</li>
           </ul>
         </div>
@@ -39,6 +38,7 @@ const Footer = () => {
             <li>Private Limited Company</li>
             <li>Active</li>
             <li>London, England</li>
+            <li><a href="mailto:operations@mandadistributorltd.co.uk">operations@mandadistributorltd.co.uk</a></li>
           </ul>
         </div>
       </div>

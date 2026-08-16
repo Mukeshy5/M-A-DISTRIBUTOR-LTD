@@ -16,7 +16,7 @@ const CategoryCard = ({ title, description, image, category }) => {
           className="secondary-button"
           onClick={() => navigate(`/products?category=${encodeURIComponent(category)}`)}
         >
-          View {title === 'Kitchen Replenishment' ? 'Kitchen Products' : title === 'Clothing' ? 'Clothing' : title === 'Groceries' ? 'Groceries' : 'Decorative Items'}
+          View {title === 'Kitchen Replenishment' ? 'Kitchen Products' : title === 'Clothing' ? 'Clothing' : title === 'Decorative Items' ? 'Decorative Items' : 'All Products'}
         </button>
       </div>
     </article>

@@ -31,6 +31,22 @@ const ContactUs = () => {
                 <a href="mailto:operations@mandadistributorltd.co.uk">operations@mandadistributorltd.co.uk</a>
               </p>
             </div>
+            {/* New map block */}
+            <div className="map-block">
+              <h3>Our Location</h3>
+              <div className="map-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9063080000003!2d-0.0543632842308947!3d51.5173549796358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a701d5b0f5b1%3A0x1a2b3c4d5e6f7a8b!2s39%20Landseer%20Ave%2C%20London%20E12%206JE%2C%20UK!5e0!3m2!1sen!2suk!4v1678912345678!5m2!1sen!2suk"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="M&A Distributor Ltd Location"
+                ></iframe>
+              </div>
+            </div>
           </div>
 
           <div className="form-card">

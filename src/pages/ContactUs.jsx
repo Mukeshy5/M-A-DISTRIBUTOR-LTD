@@ -73,9 +73,6 @@ const ContactUs = () => {
                 E12 6JE
               </p>
             </div>
-            <p>
-              <strong>Company Number:</strong> 12922043
-            </p>
           </div>
 
           <form className="form-card" onSubmit={handleSubmit} noValidate>

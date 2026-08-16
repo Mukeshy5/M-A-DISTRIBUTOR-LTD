@@ -19,35 +19,35 @@ const featureCards = [
 ];
 
 const companyDetails = [
-  { label: 'Company No.', value: '12922043' },
   { label: 'Company Type', value: 'Private Limited Company' },
   { label: 'Status', value: 'Active' },
   { label: 'Established', value: '2 October 2020' },
+  { label: 'Registered Office', value: 'London, England' },
 ];
 
 const categoryItems = [
   {
     title: 'Clothing',
     description: 'Explore clothing products suitable for everyday use and different customer requirements.',
-    image: products[0].image,
+    image: products.find((product) => product.category === 'Clothing')?.image,
     category: 'Clothing',
   },
   {
     title: 'Kitchen Replenishment',
     description: 'Practical kitchen and household replenishment products for everyday requirements.',
-    image: products[4].image,
+    image: products.find((product) => product.category === 'Kitchen Replenishment')?.image,
     category: 'Kitchen Replenishment',
   },
   {
     title: 'Groceries',
     description: 'Everyday grocery and essential consumer products supplied through our distribution network.',
-    image: products[8].image,
+    image: products.find((product) => product.category === 'Groceries')?.image,
     category: 'Groceries',
   },
   {
     title: 'Decorative Items',
     description: 'Decorative products designed to add style and visual appeal to homes and spaces.',
-    image: products[10].image,
+    image: products.find((product) => product.category === 'Decorative Items')?.image,
     category: 'Decorative Items',
   },
 ];
@@ -78,13 +78,13 @@ const Home = () => {
 
           <div className="hero-visual" aria-label="Business distribution operations overview">
             <div className="visual-card large">
-              <img src={products[4].image} alt="Kitchen distribution products" />
+              <img src={products.find((product) => product.category === 'Kitchen Replenishment')?.image} alt="Kitchen distribution products" />
             </div>
             <div className="visual-card small">
-              <img src={products[11].image} alt="Decorative product display" />
+              <img src={products.find((product) => product.category === 'Decorative Items')?.image} alt="Decorative product display" />
             </div>
             <div className="visual-card small alt">
-              <img src={products[0].image} alt="Clothing distribution range" />
+              <img src={products.find((product) => product.category === 'Clothing')?.image} alt="Clothing distribution range" />
             </div>
           </div>
         </div>

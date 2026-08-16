@@ -3,7 +3,6 @@ import SectionTitle from '../components/SectionTitle.jsx';
 
 const details = [
   { label: 'Company Name', value: 'M&A DISTRIBUTOR LTD' },
-  { label: 'Company Number', value: '12922043' },
   { label: 'Company Status', value: 'Active' },
   { label: 'Company Type', value: 'Private Limited Company' },
   { label: 'Incorporated', value: '2 October 2020' },

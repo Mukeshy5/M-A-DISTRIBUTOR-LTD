@@ -18,13 +18,6 @@ const featureCards = [
   { title: 'Customer-Oriented Approach', text: 'Product information and inquiries are easy to access.' },
 ];
 
-const companyDetails = [
-  { label: 'Company Type', value: 'Private Limited Company' },
-  { label: 'Status', value: 'Active' },
-  { label: 'Established', value: '2 October 2020' },
-  { label: 'Registered Office', value: 'London, England' },
-];
-
 const categoryItems = [
   {
     title: 'Clothing',
@@ -104,25 +97,6 @@ const Home = () => {
             <div className="visual-card small alt">
               {heroImages[2] && <img src={heroImages[2].image} alt={heroImages[2].alt} />}
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-spacing">
-        <div className="container">
-          <SectionTitle
-            eyebrow="Company overview"
-            title="About M&amp;A DISTRIBUTOR LTD"
-            text="M&amp;A DISTRIBUTOR LTD is an active private limited company incorporated in the United Kingdom. The company focuses on product distribution across multiple everyday consumer categories, providing customers and business partners with access to a diverse range of products."
-          />
-
-          <div className="info-grid">
-            {companyDetails.map((detail) => (
-              <div key={detail.label} className="info-card">
-                <span>{detail.label}</span>
-                <strong>{detail.value}</strong>
-              </div>
-            ))}
           </div>
         </div>
       </section>
